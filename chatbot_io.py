@@ -124,8 +124,8 @@ def create_keyboard(list,selective=False):
     reply_markup = {
         "keyboard": list,
         "resize_keyboard": True,
-        "one_time_keyboard": True,
-        "selective": selective # selective is bugged - works for mobile client but not on desktop
+        "one_time_keyboard": False, # changing to False to test iOS
+        "selective": selective # selective is bugged for tele for mac
     }
     js = json.dumps(reply_markup)
     return js
